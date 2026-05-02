@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "font-matchmaker",
+  "owner": {
+    "name": "Harsh Joshi",
+    "url": "https://github.com/josharsh"
+  },
+  "metadata": {
+    "description": "Reads your project and recommends fonts that match its personality — with reasoning tied to actual typographic design characteristics.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "font-matchmaker",
+      "description": "Analyze a project's identity, audience, and domain to recommend specific fonts with reasoning — matching typography to the product's personality and goals.",
+      "source": "./",
+      "license": "MIT",
+      "category": "design",
+      "keywords": [
+        "typography",
+        "fonts",
+        "design",
+        "branding",
+        "font-pairing",
+        "ui-design",
+        "developer-tools"
+      ],
+      "skills": [
+        "./skills/font-matchmaker"
+      ]
+    }
+  ]
+}

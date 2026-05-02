@@ -1,0 +1,116 @@
+{
+  "skill": "font-matchmaker",
+  "model": "claude-haiku-4-5-20251001",
+  "tests": [
+    {
+      "name": "analyzes project personality",
+      "prompt": "/font-matchmaker — This project is a real-time stock trading dashboard for institutional investors. It needs to feel trustworthy and precise.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(personality|warmth|formality|authority|innovation|clarity|axis|profile)",
+          "description": "Should assess the project's personality on defined axes"
+        }
+      ]
+    },
+    {
+      "name": "recommends specific fonts not generic advice",
+      "prompt": "Recommend fonts for a developer CLI tool that helps with Git workflows. It's opinionated and fast.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(Inter|Geist|JetBrains|Mono|DM Sans|Manrope|IBM Plex|Source Code|Fira)",
+          "description": "Should recommend specific font names, not generic categories"
+        }
+      ]
+    },
+    {
+      "name": "explains WHY with design characteristics",
+      "prompt": "Why are you recommending that font for my developer tool?",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(x-height|aperture|stroke|geometric|terminal|contrast|proportion|weight|counter|monoline)",
+          "description": "Should reference actual typographic design characteristics in reasoning"
+        }
+      ]
+    },
+    {
+      "name": "different recommendation for warm consumer app",
+      "prompt": "/font-matchmaker — This is a meditation and wellness app for everyday people. It should feel calm, approachable, and human.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(round|Nunito|Poppins|Quicksand|humanist|warm|soft|open|friendly|Lato|approachable)",
+          "description": "Should recommend warmer, rounder fonts for a wellness app — not geometric tech fonts"
+        }
+      ]
+    },
+    {
+      "name": "includes implementation details",
+      "prompt": "Give me the full font recommendation for my Next.js SaaS dashboard with implementation details.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(font-family|import|Google Fonts|variable|weight|css|tailwind|config|CDN|npm)",
+          "description": "Should include actionable implementation details"
+        }
+      ]
+    },
+    {
+      "name": "recommends font pairing not single font",
+      "prompt": "What fonts should I use for a legal tech platform that handles contract management?",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(heading|body|pair|display|text|primary|secondary)",
+          "description": "Should recommend a font system with heading and body, not just one font"
+        }
+      ]
+    },
+    {
+      "name": "check command evaluates current fonts",
+      "prompt": "/font-matchmaker check — My developer documentation site currently uses Comic Sans for headings and Papyrus for body text.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(mismatch|doesn't|poor|wrong|playful|casual|serious|credibility|technical|developer)",
+          "description": "Should flag the obvious mismatch between casual fonts and a technical documentation context"
+        }
+      ]
+    },
+    {
+      "name": "why command analyzes fit",
+      "prompt": "/font-matchmaker why Playfair Display — my project is a Kubernetes monitoring tool",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(editorial|luxury|serif|doesn't fit|mismatch|traditional|poor|better|instead|alternative)",
+          "description": "Should explain why a display serif doesn't fit a DevOps monitoring tool"
+        }
+      ]
+    },
+    {
+      "name": "provides alternatives on personality axes",
+      "prompt": "I like your recommendation but I want something with more personality and less corporate feeling.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(alternative|instead|more personality|expressive|distinctive|try|consider|swap)",
+          "description": "Should offer alternatives that shift along the personality axes the user specified"
+        }
+      ]
+    },
+    {
+      "name": "size scale and hierarchy recommendation",
+      "prompt": "What font sizes should I use with this recommendation? Give me the full type scale.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(scale|ratio|h1|h2|heading|body|16|px|rem|1\\.25|1\\.333|1\\.5|base)",
+          "description": "Should provide a typographic scale with specific sizes and ratios"
+        }
+      ]
+    }
+  ]
+}
