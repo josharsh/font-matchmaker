@@ -126,46 +126,90 @@ Project Personality:
   Archetype: [e.g., "Precision DevTool", "Friendly Consumer App", "Trusted Enterprise Platform"]
 ```
 
-## Phase 2: Font Recommendation
+## Phase 2: Describe the Feel (Before Naming Anything)
 
-Based on the personality profile, recommend a font system:
+Users don't think in font names. They think in feelings. Don't say "I recommend Geist" — describe what it looks and feels like FIRST, get alignment, THEN name it.
 
-### Primary Font (Headings / Display)
-- **Font name** — with a link to where it's available (Google Fonts, GitHub, foundry)
-- **Why this font** — connect specific design characteristics (x-height, aperture, stroke contrast, terminals) to the project's personality axes
-- **What it signals** — the impression it creates in the first 50ms
-- **Weights to use** — which specific weights for H1, H2, H3
+### Step 1: Describe the Vibe
 
-### Secondary Font (Body / UI)
-- Same format as above
-- **Why it pairs well** — explain the contrast/harmony relationship
-
-### Tertiary Font (Code / Mono) — only if relevant
-- Same format
-
-### The Recommendation Format
+Based on the personality profile, paint a picture of what the typography SHOULD feel like. Use visual metaphors the user can relate to:
 
 ```
-Font System for [Project Name]:
+Based on your project's personality, here's what your typography should feel like:
 
-  Headings: [Font] ([weight range])
-  Body: [Font] ([weight range])
-  Code: [Font] (if applicable)
+  For headings: Think of text that looks like it was engineered, not handwritten.
+  Clean, sharp edges. Even spacing. Every letter the same width and weight — no
+  flourishes, no decoration. Like the text on a premium piece of hardware or
+  a well-designed dashboard. Precise but not cold — there's a subtle roundness
+  that keeps it approachable.
 
-  Why this combination:
-  [2-3 sentences connecting the fonts to the project's personality]
+  For body text: The same family, just lighter. Easy to read in long blocks.
+  Tall lowercase letters so it stays legible even when small. Wide-open letter
+  shapes so nothing feels cramped. Functional — you forget the font is there
+  and just read the content.
 
-  Alternatives if you want more/less [specific axis]:
-  - More warmth: [alternative font]
-  - More authority: [alternative font]
-  - More personality: [alternative font]
+  For code: Fixed-width characters where every letter lines up perfectly.
+  Distinguished 0/O and 1/l so you never misread. Clean but not sterile.
+
+  Overall feeling: If your product were a physical object, this typography would
+  be on the packaging of a high-end developer tool — think Vercel or Linear's
+  visual language.
+
+Does this feel right for your project? Or should I adjust — maybe warmer?
+More editorial? More playful?
 ```
 
-### Always Include:
-- **Practical implementation:** CSS `font-family` stack with fallbacks
-- **Where to get it:** Google Fonts link, npm package, or CDN
-- **Size scale suggestion:** Base size, heading scale ratio (1.25, 1.333, 1.5, etc.)
-- **One alternative** per position with reasoning for when to consider it
+### Step 2: Get Alignment
+
+Wait for the user to respond. They might say:
+- **"Yes, that's perfect"** → move to naming
+- **"More warm/friendly"** → adjust: describe rounder, softer shapes
+- **"More serious/professional"** → adjust: describe tighter, more structured forms
+- **"More unique/distinctive"** → adjust: describe fonts with more character and personality
+- **"Less techy"** → adjust: describe humanist shapes with organic curves
+
+If they want adjustments, re-describe the adjusted feel. Keep going until they say it clicks. Usually takes 1-2 rounds max.
+
+### Step 3: Name and Implement
+
+Once the user is aligned on the FEEL, reveal the specific fonts:
+
+```
+Great — here's the exact font that matches what I described:
+
+  Headings: Geist Sans (weight 600-700)
+  ↳ Built by Vercel. Geometric sans-serif with a large x-height and open
+    apertures. The precision you wanted with just enough roundness to stay human.
+  ↳ https://vercel.com/font (also on Google Fonts)
+
+  Body: Geist Sans (weight 400)
+  ↳ Same family, lighter weight. Consistent feel across your product.
+    Tall lowercase letters (high x-height) keep it readable at 14-16px.
+
+  Code: Geist Mono (weight 400)
+  ↳ Companion monospace. Distinguished characters, same geometric DNA.
+  ↳ Ligatures available but optional.
+
+  Implementation:
+    CSS: font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    Install: npm install geist OR Google Fonts CDN
+    Scale: 16px base → 1.25 ratio (H3: 20px, H2: 25px, H1: 31px)
+
+  If you change your mind later:
+    - Want more warmth → swap to Inter (slightly rounder, more humanist)
+    - Want more weight → swap to IBM Plex Sans (heavier, institutional)
+    - Want more character → swap to Space Grotesk (distinctive letterforms)
+```
+
+### The Key Rule: Always Describe Before You Name
+
+Never start with "I recommend Inter." Start with "Imagine text that feels clean, geometric, precisely spaced..." THEN say "that font is called Inter."
+
+Why? Because:
+1. Users can validate whether the FEELING matches their vision — they can't validate a font name
+2. It builds understanding — the user learns WHY this font fits, not just WHAT it's called
+3. It makes adjustments natural — "I want it warmer" is easy feedback; "I don't like Inter" is a dead end
+4. The user feels heard — you described their product's personality back to them through typography
 
 ---
 
