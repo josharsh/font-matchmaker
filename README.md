@@ -4,8 +4,18 @@ A Claude Code skill that reads your project and recommends fonts that match its 
 
 ## Install
 
+In Claude Code, run:
+
 ```
-/plugin marketplace add https://github.com/josharsh/font-matchmaker
+/plugin marketplace add josharsh/font-matchmaker
+```
+
+Or manually:
+
+```bash
+mkdir -p ~/.claude/skills/font-matchmaker
+curl -sL https://raw.githubusercontent.com/josharsh/font-matchmaker/main/skills/font-matchmaker/SKILL.md \
+  -o ~/.claude/skills/font-matchmaker/SKILL.md
 ```
 
 **Manual:** Copy `skills/font-matchmaker/SKILL.md` to `~/.claude/skills/font-matchmaker/`.
